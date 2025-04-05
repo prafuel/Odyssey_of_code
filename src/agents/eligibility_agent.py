@@ -224,6 +224,10 @@ if __name__ == "__main__":
     # print("\n📊 ELIGIBILITY ANALYSIS RESULT:")
     # print(json.dumps(result.model_dump(), indent=2))
 
+    print("\nRecommended Actions:")
+    for action in result.recommended_actions:
+        print(f"  - {action}")
+
     with open("eligibility.json", "w") as f:
         json.dump(result.model_dump(), f, indent=2)
     print(result)

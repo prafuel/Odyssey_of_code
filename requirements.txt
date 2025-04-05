@@ -11,3 +11,5 @@ sentence-transformers
 langchain_groq
 docx2txt
 PyMuPDF
+langchain_chroma
+langchain_huggingface

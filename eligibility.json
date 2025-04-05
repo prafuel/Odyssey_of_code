@@ -1,20 +1,24 @@
 {
   "eligible": true,
   "reasons": [
-    "The company has provided a Certificate of Insurance, which meets the RFP's requirement.",
-    "The company has provided a W-9 Form, which meets the RFP's requirement.",
-    "The company has provided a Texas Employment Agency License, which meets the RFP's requirement.",
-    "The company has provided a DUNS Number, which meets the RFP's requirement.",
-    "The company has provided a SAM.gov Registration Date, which meets the RFP's requirement.",
-    "The company has provided NAICS Codes, which meets the RFP's requirement."
+    "The company has a valid Certificate of Insurance (Policy #TX-884529-A) that includes Workers' Comp, Liability, and Auto",
+    "The company has a valid W-9 Form (TIN: 47-6392011) attached",
+    "The company has a valid DUNS Number (07-842-1490)",
+    "The company has a valid CAGE Code (8J4T7)",
+    "The company has a valid SAM.gov Registration Date (03/01/2022)",
+    "The company has NAICS Codes that match the RFP (561320 \u2013 Temporary Help Services; 541611 \u2013 Admin Management)",
+    "The company has a valid State Registration Number (SRN-DE-0923847)"
   ],
   "missing_requirements": null,
   "matching_requirements": [
-    "The company has provided a Certificate of Insurance, which meets the RFP's requirement.",
-    "The company has provided a W-9 Form, which meets the RFP's requirement.",
-    "The company has provided a Texas Employment Agency License, which meets the RFP's requirement.",
-    "The company has provided a DUNS Number, which meets the RFP's requirement.",
-    "The company has provided a SAM.gov Registration Date, which meets the RFP's requirement.",
-    "The company has provided NAICS Codes, which meets the RFP's requirement."
+    "Required certifications and accreditations",
+    "State/federal registrations and legal status",
+    "Required past experience and project history",
+    "Technical capabilities required by the RFP",
+    "Compliance with any special requirements (small business, etc.)"
+  ],
+  "recommended_actions": [
+    "Consider obtaining MBE certification",
+    "Provide additional information about the company's historical underutilized business status"
   ]
 }
