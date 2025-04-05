@@ -8,9 +8,7 @@ from langchain_experimental.text_splitter import SemanticChunker
 from langchain_community.document_loaders import (
     PyPDFLoader,
     Docx2txtLoader,
-    TextLoader,
-    CSVLoader,
-    UnstructuredPowerPointLoader
+    TextLoader
 )
 from langchain.embeddings import HuggingFaceEmbeddings
 
@@ -19,8 +17,6 @@ LOADER_MAPPING = {
     ".pdf": PyPDFLoader,
     ".docx": Docx2txtLoader,
     ".txt": TextLoader,
-    ".csv": CSVLoader,
-    ".pptx": UnstructuredPowerPointLoader
 }
 
 def load_document(file_path, doc_type):

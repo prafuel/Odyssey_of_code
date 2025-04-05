@@ -8,3 +8,6 @@ unstructured>=0.10.30
 python-pptx>=0.6.21
 langchain-experimental
 sentence-transformers
+langchain_groq
+docx2txt
+PyMuPDF
