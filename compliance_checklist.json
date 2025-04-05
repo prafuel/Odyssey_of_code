@@ -1,0 +1,81 @@
+{
+  "checklist": {
+    "DOCUMENT FORMAT REQUIREMENTS": {
+      "Page limits (overall and per-section)": [
+        {
+          "page": 5.2,
+          "value": "Submittals shall be on 8 \u00bd inch by 11 inches, bound, stapled, or in a binder, with a Table of Contents and all pages numbered"
+        }
+      ],
+      "Font specifications (type, size, color)": [],
+      "Margin requirements": [],
+      "Line spacing": [],
+      "Header/footer specifications": [],
+      "Table of Contents requirements": [],
+      "Section numbering conventions": [],
+      "File format requirements (PDF, Word, etc.)": []
+    },
+    "SUBMISSION LOGISTICS": {
+      "Submission deadline (date and time, including timezone)": [
+        {
+          "date": "February 27, 2025",
+          "time": "2:00 P.M.",
+          "timezone": "Central Standard Time"
+        }
+      ],
+      "Submission method (electronic portal, email, physical delivery)": [
+        {
+          "method": "Physical delivery",
+          "location": "3840 Hulen Street, Suite 538, Fort Worth, Texas 76107"
+        }
+      ],
+      "Number of copies required": [
+        {
+          "number": "1"
+        }
+      ],
+      "Special packaging or labeling instructions": []
+    },
+    "REQUIRED COMPONENTS": {
+      "Mandatory forms and attachments": [
+        {
+          "form": "Certificate of Insurance",
+          "attachment": "A CURRENT \u201cCERTIFICATE OF INSURANCE\u201d MUST ACCOMPANY ALL PROPOSALS"
+        }
+      ],
+      "Required certifications or acknowledgments": [],
+      "Required signatures and their locations": [
+        {
+          "signature": "Signed in ink by a person or office or the company submitting the Proposal that is authorized to enter into contractual agreements on behalf of the company"
+        }
+      ],
+      "Specific section organization requirements": [
+        {
+          "section": "Tab 1 \u2013 Cover Letter",
+          "organization": "A brief introductory letter of representation"
+        }
+      ],
+      "Required table formats": [],
+      "Required graphics or visual elements": []
+    },
+    "DEAL BREAKERS": {
+      "Identify any requirements described as 'mandatory', 'must', 'shall', or 'required'": [
+        {
+          "description": "All proposals must contain complete and accurate pricing.",
+          "type": "Required"
+        }
+      ],
+      "Note any statements like 'failure to comply will result in disqualification'": [
+        {
+          "statement": "Unsigned proposals will be deemed non-responsive and will not be considered for award."
+        }
+      ],
+      "Highlight any sections labeled as 'Minimum Requirements' or 'Mandatory Requirements'": [
+        {
+          "section": "6. PROPOSAL REQUIREMENTS",
+          "label": "Mandatory Requirements"
+        }
+      ]
+    }
+  }
+}

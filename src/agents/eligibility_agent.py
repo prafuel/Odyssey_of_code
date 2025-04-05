@@ -1,4 +1,5 @@
 import os
+import json
 from typing import List
 from langchain_groq import ChatGroq
 from schema import EligibilityAgentOutput
@@ -134,8 +135,7 @@ class EligibilityAnalyzerAgent:
         relevant_company_info = self.get_relevant_company_info(rfp_chunks)
         
         # Create eligibility analyzer prompt
-        prompt_template = """
-            You are RFP Eligibility Analyzer.
+        prompt_template = """You are RFP Eligibility Analyzer.
             
             Your task is to determine if the company meets the eligibility criteria for this RFP by strictly comparing the RFP requirements against the company's qualifications.
             
@@ -153,8 +153,7 @@ class EligibilityAnalyzerAgent:
             5. Compliance with any special requirements (small business, etc.)
             
             Your response must be a valid JSON object with this structure:
-            format_instructions={format_instructions}
-        """
+            format_instructions={format_instructions}"""
 
         def output(x):
             return x.content
@@ -224,4 +223,7 @@ if __name__ == "__main__":
     # Print results
     # print("\n📊 ELIGIBILITY ANALYSIS RESULT:")
     # print(json.dumps(result.model_dump(), indent=2))
+
+    with open("eligibility.json", "w") as f:
+        json.dump(result.model_dump(), f, indent=2)
     print(result)

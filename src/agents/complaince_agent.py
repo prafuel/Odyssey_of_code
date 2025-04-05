@@ -80,7 +80,7 @@ class ComplianceChecklistAgent:
 
             Analyze the document for:
 
-            DOCUMENT FORMAT REQUIREMENTS:
+            DOCUMENT_FORMAT_REQUIREMENTS:
             - Page limits (overall and per-section)
             - Font specifications (type, size, color)
             - Margin requirements
@@ -90,13 +90,13 @@ class ComplianceChecklistAgent:
             - Section numbering conventions
             - File format requirements (PDF, Word, etc.)
 
-            SUBMISSION LOGISTICS:
+            SUBMISSION_LOGISTICS:
             - Submission deadline (date and time, including timezone)
             - Submission method (electronic portal, email, physical delivery)
             - Number of copies required
             - Special packaging or labeling instructions
 
-            REQUIRED COMPONENTS:
+            REQUIRED_COMPONENTS:
             - Mandatory forms and attachments
             - Required certifications or acknowledgments
             - Required signatures and their locations
@@ -104,7 +104,7 @@ class ComplianceChecklistAgent:
             - Required table formats
             - Required graphics or visual elements
 
-            DEAL BREAKERS:
+            DEAL_BREAKERS:
             - Identify any requirements described as "mandatory," "must," "shall," or "required"
             - Note any statements like "failure to comply will result in disqualification"
             - Highlight any sections labeled as "Minimum Requirements" or "Mandatory Requirements"
@@ -167,11 +167,11 @@ if __name__ == "__main__":
     result = compliance_agent.extract_compliance_checklist("./documents/RFPs/ELIGIBLE RFP - 1.pdf")
     
     # Print results
-    print("\n📋 COMPLIANCE CHECKLIST RESULT:")
-    print(json.dumps(result.model_dump(), indent=2))
+    # print("\n📋 COMPLIANCE CHECKLIST RESULT:")
+    # print(json.dumps(result.model_dump(), indent=2))
     
     # Save results to file
-    # with open("compliance_checklist.json", "w") as f:
-    #     json.dump(result.model_dump(), f, indent=2)
+    with open("compliance_checklist.json", "w") as f:
+        json.dump(result.model_dump(), f, indent=2)
     
-    # print("\n✅ Checklist saved to compliance_checklist.json")
+    print("\n✅ Checklist saved to compliance_checklist.json")

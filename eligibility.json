@@ -1,0 +1,20 @@
+{
+  "eligible": true,
+  "reasons": [
+    "The company has provided a Certificate of Insurance, which meets the RFP's requirement.",
+    "The company has provided a W-9 Form, which meets the RFP's requirement.",
+    "The company has provided a Texas Employment Agency License, which meets the RFP's requirement.",
+    "The company has provided a DUNS Number, which meets the RFP's requirement.",
+    "The company has provided a SAM.gov Registration Date, which meets the RFP's requirement.",
+    "The company has provided NAICS Codes, which meets the RFP's requirement."
+  ],
+  "missing_requirements": null,
+  "matching_requirements": [
+    "The company has provided a Certificate of Insurance, which meets the RFP's requirement.",
+    "The company has provided a W-9 Form, which meets the RFP's requirement.",
+    "The company has provided a Texas Employment Agency License, which meets the RFP's requirement.",
+    "The company has provided a DUNS Number, which meets the RFP's requirement.",
+    "The company has provided a SAM.gov Registration Date, which meets the RFP's requirement.",
+    "The company has provided NAICS Codes, which meets the RFP's requirement."
+  ]
+}
