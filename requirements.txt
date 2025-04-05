@@ -1,0 +1,10 @@
+langchain>=0.0.235
+chromadb>=0.4.6
+langchain_community>=0.0.10
+sentence-transformers>=2.2.2
+pypdf>=3.15.1
+python-docx>=0.8.11
+unstructured>=0.10.30
+python-pptx>=0.6.21
+langchain-experimental
+sentence-transformers
