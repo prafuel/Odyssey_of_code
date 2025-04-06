@@ -1,20 +1,15 @@
 {
   "eligible": true,
   "reasons": [
-    "Has experience in providing temporary staffing services",
-    "Complies with insurance requirements",
-    "Has state/federal registration and legal status",
-    "Has technical capabilities in administrative, IT, legal, and credentialing staffing"
+    "The company has necessary certifications and licenses to provide Temporary Staffing Services",
+    "The company has experience in providing temporary staffing services, particularly in the mental health and intellectual and developmental disability services",
+    "The company has staffing experience in similar settings, such as community centers, local mental health authorities, or local intellectual and developmental disability authorities"
   ],
-  "missing_requirements": null,
+  "missing_requirements": [],
   "matching_requirements": [
-    "Experience in providing temporary staffing services",
-    "Insurance requirements (complies with Section 8)",
-    "State/federal registration and legal status",
-    "Technical capabilities in administrative, IT, legal, and credentialing staffing"
+    "The company has necessary certifications and licenses to provide Temporary Staffing Services",
+    "The company has experience in providing temporary staffing services, particularly in the mental health and intellectual and developmental disability services",
+    "The company has staffing experience in similar settings, such as community centers, local mental health authorities, or local intellectual and developmental disability authorities"
   ],
-  "recommended_actions": [
-    "Attend the Pre-Proposal Conference",
-    "Be prepared to provide additional information or answer questions from MHMR"
-  ]
+  "recommended_actions": []
 }

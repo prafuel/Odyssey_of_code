@@ -13,6 +13,7 @@ from langchain_core.runnables import RunnablePassthrough, RunnableParallel
 from langchain_community.document_loaders import PyMuPDFLoader, Docx2txtLoader
 
 from config import config
+from helper.semantic_chunking import SemanticChunker
 from schema import EligibilityAgentOutput
 
 from dotenv import load_dotenv
@@ -34,6 +35,9 @@ class EligibilityAnalyzerAgent:
         
         # Initialize LLM
         self.llm = ChatGroq(model_name=config.MAIN_LLM)
+
+        # Chunking Strategy
+        self.chunker = SemanticChunker(self.llm)
         
         # Company profile data
         self.company_vectorstore = None
@@ -52,7 +56,8 @@ class EligibilityAnalyzerAgent:
         
         # Split company profile into chunks for better retrieval
         splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-        chunks = splitter.split_documents(documents)
+        # chunks = splitter.split_documents(documents)
+        chunks = splitter.split_text(documents)
         
         # Create vector embeddings using Chroma
         print("🔍 Creating Chroma vector index for company profile...")

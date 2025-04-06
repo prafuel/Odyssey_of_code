@@ -32,7 +32,7 @@ class SemanticChunker:
     def split_text(self, text: str, metadata: Dict = None) -> List[Dict]:
         """Split text into semantic chunks preserving context"""
         # First use a basic splitter to break very large text into manageable pieces
-        initial_splitter = CharacterTextSplitter(
+        initial_splitter = RecursiveCharacterTextSplitter(
             separator="\n\n",
             chunk_size=4000,
             chunk_overlap=200

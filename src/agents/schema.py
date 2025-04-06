@@ -32,13 +32,27 @@ class ComplianceChecklistOutput(BaseModel):
 
 
 class RiskClause(BaseModel):
-    """Schema for an identified risk clause"""
-    category: str = Field(description="Category of the risk (e.g., Termination, Indemnification)")
-    problematic_clause: str = Field(description="Direct quote of the problematic clause from the RFP")
-    risk_assessment: str = Field(description="Brief explanation of why this clause is problematic")
-    suggested_alternative: str = Field(description="Suggested more balanced or neutral alternative language")
+    category: str = Field(description="The type of clause (e.g., Termination, Indemnification)")
+    clause: str = Field(description="The problematic clause text")
+    risk: str = Field(description="Assessment of why the clause is problematic")
+    alternative: str = Field(description="Suggested balanced alternative")
+    risk_level: str = Field(description="Risk level (Low, Medium, High)")
 
 class RiskAnalysisOutput(BaseModel):
-    """Schema for the full risk analysis output"""
-    identified_risks: List[RiskClause] = Field(description="List of identified risky clauses")
-    summary: str = Field(description="Brief summary of overall contract risk profile")
+    risk_clauses: List[RiskClause] = Field(description="List of identified risk clauses eg. Unilateral Termination, Indemnity clauses, No Exit clauses")
+    overall_risk_level: str = Field(description="Overall risk assessment of the RFP")
+
+class ReasoningStep(BaseModel):
+    thought: str = Field(description="The reasoning or thought process")
+    action: str = Field(description="The action to take based on the reasoning")
+    observation: Optional[str] = Field(None, description="The result of the action")
+
+class RiskAnalysisWithReasoning(RiskAnalysisOutput):
+    reasoning_trace: List[ReasoningStep] = Field(description="The step-by-step reasoning process")
+    improvement_suggestions: List[str] = Field(description="Suggestions for improving the analysis")
+
+
+class ReasoningStep(BaseModel):
+    thought: str
+    action: str
+    observation: Optional[str] = None

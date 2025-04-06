@@ -1,23 +1,48 @@
 {
-  "identified_risks": [
-    {
-      "category": "Indemnification",
-      "problematic_clause": "CONTRACTOR, ON BEHALF OF ITSELF OR ITS PERSONNEL PROVIDING SERVICES UNDER THIS AGREEMENT, FURTHER HEREBY RELEASES AND AGREES TO INDEMNIFY AND HOLD HARMLESS MHMR AND ALL ITS TRUSTEES, OFFICERS, EMPLOYEES, AGENTS, SUCCESSORS AND ASSIGNS FROM ALL SUITS, ACTIONS, CLAIMS, COSTS, EXPENSES, LIABILITIES, LOSSES, DAMAGES, OBLIGATIONS, PENALTIES, FINES, DEMANDS, RIGHTS AND CONTROVERSIES OF ANY KIND AND CHARACTER WHATSOEVER (COLLECTIVELY, THE \u201cLIABILITIES\u201d), WHETHER ARISING UNDER",
-      "risk_assessment": "This clause is problematic because it implies unlimited liability without defining scope or fault, which may lead to unintended consequences for the vendor.",
-      "suggested_alternative": "The vendor shall indemnify the client for direct losses arising from proven negligence."
-    },
+  "risk_clauses": [
     {
       "category": "Termination",
-      "problematic_clause": "ACKNOWLEDGEMENT RFP 25-008 TEMPORARY STAFFING SERVICES MHMR IN ITS SOLE AND ABSOLUTE DISCRETION SHALL HAVE THE RIGHT TO AWARDS FOR ANY OR ALL MATERIALS LISTED IN EACH PROPOSAL, SHALL HAVE THE RIGHT TO REJECT ANY AND ALL PROPOSALS, AND SHALL NOT BE BOUND TO ACCEPT THE LOWEST PROPOSAL AND SHALL BE ALLOWED TO ACCEPT THE TOTAL PROPOSAL OF ANY ONE CONTRACTOR, OR AS OTHERWISE STATED IN THIS PROPOSAL.",
-      "risk_assessment": "This clause is problematic because it gives the client too much discretion to terminate the contract without notice, which may pose a high risk for the vendor.",
-      "suggested_alternative": "Either party may terminate the agreement with a 30-day written notice."
+      "clause": "The District reserves the right to withdraw the award to a successful Company within 30 days of the award if, in the opinion of the District, the successful Company is unable or unwilling to enter into a form of contract satisfactory to the District.",
+      "risk": "This clause allows the District to terminate the contract unilaterally, posing a high risk for the vendor, as it may be terminated without notice or justification.",
+      "alternative": "Either party may terminate the agreement with a 30-day written notice.",
+      "risk_level": "High"
     },
     {
-      "category": "Payment Terms",
-      "problematic_clause": "ALL PROPOSALS MUST BE AN IRREVOCABLE OFFER VALID FOR 120 CALENDAR DAYS AFTER THE PROPOSAL OPENING.",
-      "risk_assessment": "This clause may pose a risk for the vendor because it requires an irrevocable offer for an extended period, which may limit the vendor's ability to negotiate or withdraw its proposal.",
-      "suggested_alternative": "Proposals shall be valid for a reasonable period, to be determined by mutual agreement between the parties."
+      "category": "Indemnification",
+      "clause": "All completed proposals submitted in response to this RFP become the property of the District upon submission.",
+      "risk": "This clause implies unlimited liability without defining scope or fault, posing a high risk for the vendor.",
+      "alternative": "The vendor shall indemnify the client for direct losses arising from proven negligence.",
+      "risk_level": "High"
+    },
+    {
+      "category": "Submission Logistics",
+      "clause": "The cost of preparing and submitting a response to this RFP will be assumed solely by each Proposer, whether or not any agreement is signed as a result of the RFP.",
+      "risk": "This clause may pose a risk for the vendor if the District uses the proposal for purposes other than evaluation.",
+      "alternative": "The District shall use the proposal solely for evaluation purposes.",
+      "risk_level": "Medium"
     }
   ],
-  "summary": "Overall, this RFP presents moderate to high risk for the vendor due to the lack of clarity and flexibility in certain clauses, such as indemnification, termination, and payment terms. The RFP's requirements for confidentiality, non-collusion, and proposal format also present potential risks for the vendor. It is essential for the vendor to carefully review and negotiate these clauses to mitigate potential risks and ensure a successful partnership."
+  "overall_risk_level": "High",
+  "reasoning_trace": [
+    {
+      "thought": "The District has the right to terminate the contract unilaterally, which poses a significant risk for the vendor.",
+      "action": "Identify this clause as a high-risk clause and suggest an alternative.",
+      "observation": "The alternative clause provides a 30-day written notice, which reduces the risk of termination."
+    },
+    {
+      "thought": "The proposal becomes the property of the District upon submission, which implies unlimited liability.",
+      "action": "Identify this clause as a high-risk clause and suggest an alternative.",
+      "observation": "The alternative clause limits liability to direct losses arising from proven negligence."
+    },
+    {
+      "thought": "The vendor is responsible for the cost of preparing and submitting a response to the RFP, which may pose a risk if the proposal is used for purposes other than evaluation.",
+      "action": "Identify this clause as a medium-risk clause and suggest an alternative.",
+      "observation": "The alternative clause ensures that the proposal is used solely for evaluation purposes."
+    }
+  ],
+  "improvement_suggestions": [
+    "Continue refining the analysis to cover all risk categories",
+    "Provide detailed alternatives for high-risk clauses",
+    "Ensure comprehensive coverage of all risk categories"
+  ]
 }
