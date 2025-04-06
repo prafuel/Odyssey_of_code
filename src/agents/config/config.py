@@ -3,7 +3,7 @@ COMPANY_VD="./chroma/company_vd"
 RFP_VD="./chroma/rfp_vd"
 
 # models
-MAIN_LLM="llama-3.3-70b-versatile"
+MAIN_LLM="llama-guard-3-8b"
 EMBEDDING_MODEL="all-MiniLM-L6-v2"
 
 

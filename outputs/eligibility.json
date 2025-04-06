@@ -1,24 +1,23 @@
 {
-  "eligible": false,
+  "eligible": true,
   "reasons": [
-    "Lack of direct evidence of experience with Craft Content Management System (CMS)",
-    "Insufficient information on technical capabilities for user-friendly and mobile-responsive website development",
-    "No clear plan for compliance with proposal submission guidelines"
+    "The company has a valid Letter of Transmittal with a signature from a Company officer.",
+    "The company's Proposal is concise and organized within the 12-page limit.",
+    "The company has provided a valid W-9 Form.",
+    "The company has provided a valid Certificate of Insurance.",
+    "The company has provided valid licenses and registrations, including a Texas Employment Agency License.",
+    "The company has provided valid contact information, including phone numbers and email addresses."
   ],
-  "missing_requirements": [
-    "Comprehensive General Liability coverage of at least $1,000,000",
-    "Experience with Craft CMS",
-    "Technical capabilities for website development and maintenance",
-    "Compliance with special proposal submission requirements"
-  ],
+  "missing_requirements": null,
   "matching_requirements": [
-    "Texas Employment Agency License",
-    "SAM.gov registration"
+    "The company has provided an Executive Summary.",
+    "The company has provided a brief description of their approach to meeting the District's requirements.",
+    "The company has indicated any major requirements that cannot be met.",
+    "The company has highlighted the major features of the Proposal."
   ],
   "recommended_actions": [
-    "Obtain necessary insurance coverage",
-    "Develop experience with Craft CMS",
-    "Enhance technical capabilities for website development",
-    "Establish a plan for complying with proposal submission guidelines"
+    "The company should provide a Bank Letter of Creditworthiness to demonstrate financial stability.",
+    "The company should consider obtaining MBE certification to increase their eligibility for future RFPs.",
+    "The company should ensure that all personnel resumes are included in the Proposal."
   ]
 }

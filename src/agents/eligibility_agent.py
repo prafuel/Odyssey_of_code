@@ -7,8 +7,8 @@ from langchain_community.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain_core.output_parsers import PydanticOutputParser
 
-from config import config
-from schema import EligibilityAgentOutput
+from agents.config import config
+from agents.schema import EligibilityAgentOutput
 
 # from agents.config import config
 # from agents.schema import EligibilityAgentOutput

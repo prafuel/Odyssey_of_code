@@ -1,33 +1,233 @@
 {
   "checklist": {
-    "DOCUMENT_FORMAT_REQUIREMENTS": {
-      "page_limits": "Not specified",
-      "font_specifications": "Not specified",
-      "margin_requirements": "Not specified",
-      "line_spacing": "Not specified",
-      "header_footer_specifications": "Not specified",
-      "table_of_contents_requirements": "Not specified",
-      "section_numbering_conventions": "Not specified",
-      "file_format_requirements": "Not specified"
-    },
-    "SUBMISSION_LOGISTICS": {
-      "submission_deadline": "Not specified",
-      "submission_method": "Not specified",
-      "number_of_copies_required": "Not specified",
-      "special_packaging_or_labeling_instructions": "Not specified"
-    },
-    "REQUIRED_COMPONENTS": {
-      "mandatory_forms_and_attachments": "Not specified",
-      "required_certifications_or_acknowledgments": "Not specified",
-      "required_signatures_and_locations": "Not specified",
-      "specific_section_organization_requirements": "Not specified",
-      "required_table_formats": "Not specified",
-      "required_graphics_or_visual_elements": "Not specified"
-    },
-    "DEAL_BREAKERS": {
-      "mandatory_requirements": "Not specified",
-      "failure_to_comply_statements": "Not specified",
-      "minimum_requirements_sections": "Not specified"
-    }
+    "DOCUMENT_FORMAT_REQUIREMENTS": [
+      {
+        "title": "Page Limits",
+        "description": "Overall page limit: 50 pages, per-section page limit: 15 pages (section 1), 10 pages (section 2)",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "50 pages overall, 15 pages for section 1, 10 pages for section 2"
+          }
+        ]
+      },
+      {
+        "title": "Font Specifications",
+        "description": "Font type: Arial, size: 12-point, color: Black",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Arial, 12-point, Black"
+          }
+        ]
+      },
+      {
+        "title": "Margin Requirements",
+        "description": "Top: 1 inch, Bottom: 1 inch, Left: 1 inch, Right: 1 inch",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "1 inch top, 1 inch bottom, 1 inch left, 1 inch right"
+          }
+        ]
+      },
+      {
+        "title": "Line Spacing",
+        "description": "Double-spaced",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Double-spaced"
+          }
+        ]
+      },
+      {
+        "title": "Header/Footer Specifications",
+        "description": "Header: Do not use, Footer: Include page number",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "No header, include page number in footer"
+          }
+        ]
+      },
+      {
+        "title": "Table of Contents",
+        "description": "Include at the beginning of the proposal",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Include at the beginning"
+          }
+        ]
+      },
+      {
+        "title": "Section Numbering Conventions",
+        "description": "Use decimal numerals (e.g., 1.1, 2.1)",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Decimal numerals"
+          }
+        ]
+      },
+      {
+        "title": "File Format Requirements",
+        "description": "PDF or Word(.docx) format",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "PDF or Word(.docx)"
+          }
+        ]
+      }
+    ],
+    "SUBMISSION_LOGISTICS": [
+      {
+        "title": "Submission Deadline",
+        "description": "May 15, 2024, 5:00 PM EST",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "May 15, 2024, 5:00 PM EST"
+          }
+        ]
+      },
+      {
+        "title": "Submission Method",
+        "description": "Electronic portal",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Electronic portal"
+          }
+        ]
+      },
+      {
+        "title": "Number of Copies Required",
+        "description": "One (1) copy",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "One (1) copy"
+          }
+        ]
+      },
+      {
+        "title": "Special Packaging or Labeling Instructions",
+        "description": "No special packaging or labeling required",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "No special packaging or labeling required"
+          }
+        ]
+      }
+    ],
+    "REQUIRED_COMPONENTS": [
+      {
+        "title": "Mandatory Forms and Attachments",
+        "description": "Appendix A: Disclosure of Interests, Appendix B: Organizational Chart",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Appendix A: Disclosure of Interests, Appendix B: Organizational Chart"
+          }
+        ]
+      },
+      {
+        "title": "Required Certifications or Acknowledgments",
+        "description": "Appendix C: Certification of Compliance",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Appendix C: Certification of Compliance"
+          }
+        ]
+      },
+      {
+        "title": "Required Signatures and Locations",
+        "description": "Proposal Manager: Sign on page 1, Organization Representative: Sign on page 2",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Proposal Manager: Sign on page 1, Organization Representative: Sign on page 2"
+          }
+        ]
+      },
+      {
+        "title": "Specific Section Organization Requirements",
+        "description": "Section 1: Introduction, Section 2: Methodology, Section 3: Results",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Section 1: Introduction, Section 2: Methodology, Section 3: Results"
+          }
+        ]
+      },
+      {
+        "title": "Required Table Formats",
+        "description": "Tables should be in landscape orientation, with a maximum of 15 columns and 50 rows",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Landscape orientation, maximum 15 columns and 50 rows"
+          }
+        ]
+      },
+      {
+        "title": "Required Graphics or Visual Elements",
+        "description": "Include one diagram per section",
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "One diagram per section"
+          }
+        ]
+      }
+    ],
+    "DEAL_BREAKERS": [
+      {
+        "title": "Deal Breakers",
+        "description": [
+          "Failure to comply with these requirements will result in disqualification.",
+          "Appendix A: Disclosure of Interests and Appendix B: Organizational Chart are mandatory.",
+          "Appendix C: Certification of Compliance is required for all submissions."
+        ],
+        "type": "array",
+        "items": [
+          {
+            "type": "string",
+            "value": "Failure to comply with these requirements will result in disqualification."
+          },
+          {
+            "type": "string",
+            "value": "Appendix A: Disclosure of Interests and Appendix B: Organizational Chart are mandatory."
+          },
+          {
+            "type": "string",
+            "value": "Appendix C: Certification of Compliance is required for all submissions."
+          }
+        ]
+      }
+    ]
   }
 }

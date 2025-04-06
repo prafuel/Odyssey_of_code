@@ -13,8 +13,8 @@ from langchain_core.runnables import RunnablePassthrough, RunnableMap
 from typing import List
 from dotenv import load_dotenv
 
-from config import config
-from schema import RiskAnalysisWithReasoning, RiskAnalysisOutput, RiskClause, ReasoningStep
+from agents.config import config
+from agents.schema import RiskAnalysisWithReasoning, RiskAnalysisOutput, RiskClause, ReasoningStep
 
 # from agents.config import config
 # from agents.schema import RiskAnalysisWithReasoning, RiskAnalysisOutput, RiskClause, ReasoningStep

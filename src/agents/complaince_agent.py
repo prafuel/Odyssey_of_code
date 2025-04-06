@@ -11,8 +11,8 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 # from agents.config import config
 # from agents.schema import ComplianceChecklistOutput
 
-from config import config
-from schema import ComplianceChecklistOutput
+from agents.config import config
+from agents.schema import ComplianceChecklistOutput
 
 from dotenv import load_dotenv
 load_dotenv()

@@ -115,5 +115,20 @@
     ],
     "feedback_score": 5.0,
     "risk_level": "High"
+  },
+  {
+    "timestamp": "2025-04-06 17:28:00",
+    "rfp_path": "ELIGIBLE RFP - 2.pdf",
+    "key_findings": [
+      "Termination: This clause allows the District to unilaterally terminate the contract without clear criteria or appeal process, posing a high risk for the vendor.",
+      "Indemnification: This clause implies full responsibility for permits and fees without shared responsibility, potentially leading to unforeseen costs for the vendor.",
+      "Intellectual Property: This clause may limit the vendor's use of their methodologies and intellectual property, potentially leading to loss of competitive advantage."
+    ],
+    "improvement_areas": [
+      "Ensure comprehensive coverage of all risk categories",
+      "Provide detailed alternatives for high-risk clauses"
+    ],
+    "feedback_score": null,
+    "risk_level": "Medium"
   }
 ]
