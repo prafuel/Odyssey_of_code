@@ -2,12 +2,14 @@ import os
 import json
 from typing import Dict, Any
 from langchain_groq import ChatGroq
+from langchain.schema import Document
 from langchain.prompts import PromptTemplate
 from langchain_community.vectorstores import Chroma
 from langchain_core.output_parsers import PydanticOutputParser
-from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+# from agents.config import config
+# from agents.schema import ComplianceChecklistOutput
 
 from config import config
 from schema import ComplianceChecklistOutput
@@ -36,19 +38,21 @@ class ComplianceChecklistAgent:
         self.rfp_vectorstore = None
         self.rfp_retriever = None
         
-    def load_rfp(self, rfp_path: str):
-        """Load and process RFP document"""
-        print(f"📄 Loading RFP document: {os.path.basename(rfp_path)}...")
+    def load_rfp(self, chunks: list):
+        # """Load and process RFP document"""
+        # print(f"📄 Loading RFP document: {os.path.basename(rfp_path)}...")
         
-        # Load document
-        loader = PyMuPDFLoader(rfp_path)
-        pages = loader.load()
+        # # Load document
+        # pages = load_document(rfp_path, "rfp_document")
         
-        # Split RFP into chunks
-        print("✂️ Splitting RFP into manageable chunks...")
-        splitter = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=150)
-        chunks = splitter.split_documents(pages)
+        # # Split RFP into chunks
+        # print("✂️ Splitting RFP into manageable chunks...")
+        # chunks = split_documents_semantic(pages)
         
+        # print("chunk : ", chunks)
+        chunks = [Document(chunk) for chunk in chunks]
+
+
         # Create vector embeddings using Chroma
         print("🔍 Creating Chroma vector index for RFP content...")
         self.rfp_vectorstore = Chroma.from_documents(
@@ -68,10 +72,11 @@ class ComplianceChecklistAgent:
         
         return self.rfp_retriever, chunks
     
-    def extract_compliance_checklist(self, rfp_path: str) -> Dict[str, Any]:
+    def extract_compliance_checklist(self, chunks: list) -> Dict[str, Any]:
         """Main method to extract compliance checklist from RFP using LCEL"""
+        print("chunks: ", chunks)
         # Load and process RFP
-        rfp_retriever, _ = self.load_rfp(rfp_path)
+        rfp_retriever, _ = self.load_rfp(chunks=chunks)
         
         # Create compliance checklist prompt
         prompt_template = """
@@ -162,16 +167,16 @@ if __name__ == "__main__":
     
     # Optional: Clear previous vector databases for fresh analysis
     compliance_agent.clear_vector_stores()
-    
+        
     # Analyze compliance checklist for a specific RFP
     result = compliance_agent.extract_compliance_checklist("./documents/RFPs/ELIGIBLE RFP - 1.pdf")
     
     # Print results
     # print("\n📋 COMPLIANCE CHECKLIST RESULT:")
-    # print(json.dumps(result.model_dump(), indent=2))
+    print(json.dumps(result.model_dump(), indent=2))
     
     # Save results to file
-    with open("compliance_checklist.json", "w") as f:
+    with open(config.COMPLIANCE_CHECKLIST_JSON, "w") as f:
         json.dump(result.model_dump(), f, indent=2)
     
     print("\n✅ Checklist saved to compliance_checklist.json")

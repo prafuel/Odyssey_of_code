@@ -13,3 +13,4 @@ docx2txt
 PyMuPDF
 langchain_chroma
 langchain_huggingface
+fastapi

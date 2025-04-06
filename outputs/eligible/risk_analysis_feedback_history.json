@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2025-04-06 10:32:23",
+    "timestamp": "2025-04-06 13:47:14",
     "rfp_path": "ELIGIBLE RFP - 2.pdf",
     "key_findings": [],
     "improvement_areas": [
@@ -11,7 +11,7 @@
     "risk_level": "Medium"
   },
   {
-    "timestamp": "2025-04-06 10:33:06",
+    "timestamp": "2025-04-06 13:47:50",
     "rfp_path": "ELIGIBLE RFP - 2.pdf",
     "key_findings": [],
     "improvement_areas": [
@@ -21,13 +21,13 @@
     "risk_level": "Medium"
   },
   {
-    "timestamp": "2025-04-06 10:33:49",
+    "timestamp": "2025-04-06 13:48:33",
     "rfp_path": "ELIGIBLE RFP - 2.pdf",
     "key_findings": [],
     "improvement_areas": [
       "Continue refining the analysis"
     ],
-    "feedback_score": 5.0,
-    "risk_level": "Medium"
+    "feedback_score": 7.5,
+    "risk_level": "high"
   }
 ]

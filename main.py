@@ -1,7 +1,7 @@
 import os
 import sys
 from agents.helper.loading_docs import load_document, split_documents_semantic
-from src.storing_in_vdb import create_vector_store, query_database, load_vector_store
+from temp.storing_in_vdb import create_vector_store, query_database, load_vector_store
 
 def process_documents(company_doc_path, rfp_doc_path, persist_dir="./chroma_db"):
     """

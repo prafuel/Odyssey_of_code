@@ -1,30 +1,17 @@
 import os
 import json
 import time
-from typing import List, Dict, Any, Tuple
 from langchain_groq import ChatGroq
-from schema import EligibilityAgentOutput
-from langchain.prompts import PromptTemplate
+from typing import List, Dict, Any
 from langchain_community.vectorstores import Chroma
-from langchain_core.output_parsers import PydanticOutputParser
 from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.text_splitter import (
-    RecursiveCharacterTextSplitter,
-)
-from langchain_experimental.text_splitter import SemanticChunker
-from langchain_core.runnables import RunnablePassthrough, RunnableParallel
-from langchain_community.document_loaders import (
-    PyPDFLoader,
-    Docx2txtLoader,
-    TextLoader
-)
+from langchain_core.output_parsers import PydanticOutputParser
 
 from config import config
-from helper.loading_docs import load_document, split_documents_semantic
 from schema import EligibilityAgentOutput
 
-from dotenv import load_dotenv
-load_dotenv()
+# from agents.config import config
+# from agents.schema import EligibilityAgentOutput
 
 
 class EligibilityAnalyzerAgent:
@@ -55,28 +42,15 @@ class EligibilityAnalyzerAgent:
         # Feedback history to improve responses
         self.feedback_history = []
     
-    def load_and_index_document(self, file_path: str, doc_type: str) -> Tuple[Any, List]:
-        """Unified method to load, process and index documents for both company profiles and RFPs"""
-        print(f"📄 Loading {doc_type} document: {os.path.basename(file_path)}...")
-        
-        # Load document using the helper function
-        documents = load_document(file_path, doc_type)
-        
-        if not documents:
-            raise ValueError(f"Failed to load {doc_type} document: {file_path}")
-        
-        # Split documents into chunks using semantic chunking
-        print(f"✂️ Splitting {doc_type} into manageable chunks...")
-        chunks = split_documents_semantic(documents)
-        
-        # Create vector embeddings using Chroma with appropriate directory
+    def process_document_chunks(self, document_chunks: List, doc_type: str) -> Any:
+        """Process pre-split document chunks and create vector store"""
         print(f"🔍 Creating Chroma vector index for {doc_type} content...")
         
         # Select the appropriate directory based on document type
         persist_dir = self.config.COMPANY_VD if doc_type == "company_document" else self.config.RFP_VD
         
         vectorstore = Chroma.from_documents(
-            documents=chunks, 
+            documents=document_chunks, 
             embedding=self.embeddings,
             persist_directory=persist_dir
         )
@@ -90,7 +64,7 @@ class EligibilityAnalyzerAgent:
             search_kwargs={"k": 5 if doc_type == "company_document" else 8}
         )
         
-        # Store references to retrievers based on document type
+        # Store references based on document type
         if doc_type == "company_document":
             self.company_vectorstore = vectorstore
             self.company_retriever = retriever
@@ -98,22 +72,22 @@ class EligibilityAnalyzerAgent:
             self.rfp_vectorstore = vectorstore
             self.rfp_retriever = retriever
         
-        print(f"✅ {doc_type} loaded and indexed successfully")
-        return retriever, chunks
+        print(f"✅ {doc_type} indexed successfully")
+        return retriever
     
-    def load_company_profile(self, company_profile_path: str) -> bool:
-        """Load and process company profile using unified loader"""
-        _, _ = self.load_and_index_document(company_profile_path, "company_document")
+    def process_company_chunks(self, company_chunks: List) -> bool:
+        """Process pre-split company document chunks"""
+        self.process_document_chunks(company_chunks, "company_document")
         return True
     
-    def load_rfp(self, rfp_path: str):
-        """Load and process RFP document using unified loader"""
-        return self.load_and_index_document(rfp_path, "rfp_document")
+    def process_rfp_chunks(self, rfp_chunks: List) -> Any:
+        """Process pre-split RFP document chunks"""
+        return self.process_document_chunks(rfp_chunks, "rfp_document"), rfp_chunks
     
     def get_relevant_company_info(self, rfp_chunks: List) -> str:
         """Extract company information relevant to the RFP requirements"""
         if not self.company_retriever:
-            raise ValueError("Company profile not loaded. Call load_company_profile first.")
+            raise ValueError("Company profile not loaded. Call process_company_chunks first.")
         
         # Extract key requirements from RFP
         requirements = []
@@ -206,13 +180,13 @@ class EligibilityAnalyzerAgent:
         
         return requirements
         
-    def analyze_eligibility_react(self, rfp_path: str, iterations: int = 3) -> EligibilityAgentOutput:
-        """Main method to analyze eligibility using ReAct approach with feedback loop"""
-        if not self.company_retriever:
-            raise ValueError("Company profile not loaded. Call load_company_profile first.")
+    def analyze_eligibility_from_chunks(self, company_chunks: List, rfp_chunks: List, iterations: int = 3) -> EligibilityAgentOutput:
+        """Main method to analyze eligibility using pre-processed document chunks"""
+        # Process company chunks
+        self.process_company_chunks(company_chunks)
         
-        # Load and process RFP
-        rfp_retriever, rfp_chunks = self.load_rfp(rfp_path)
+        # Process RFP chunks
+        rfp_retriever, _ = self.process_rfp_chunks(rfp_chunks)
         
         # Get relevant company information for this specific RFP
         relevant_company_info = self.get_relevant_company_info(rfp_chunks)
@@ -285,35 +259,34 @@ class EligibilityAnalyzerAgent:
         
         # Base ReAct prompt
         base_prompt = """You are RFP Eligibility Analyzer using the ReAct (Reasoning + Acting) approach.
-        
-        # Task
-        Determine if the company meets the eligibility criteria for this RFP by comparing the RFP requirements against the company's qualifications.
-        
-        # RFP Requirements
-        {requirements_text}
-        
-        # Company's Qualifications
-        {company_data}
-        
-        # ReAct Format
-        Follow this step-by-step process:
-        
-        1. Thought: [Think about what criteria needs to be evaluated]
-        2. Action: [Look for specific criteria in the requirements]
-        3. Observation: [Note what you found or didn't find about this criteria]
-        4. Thought: [Analyze if the company meets this requirement]
-        5. Action: [Look for evidence of this capability in company data]
-        6. Observation: [Note what evidence you found or didn't find]
-        
-        Repeat this process for each of these categories:
-        - Required certifications and accreditations
-        - State/federal registrations and legal status
-        - Required past experience and project history
-        - Technical capabilities required by the RFP
-        - Compliance with any special requirements
-        
-        After your analysis, provide a structured output following this format:
-        {format_instructions}
+                # Task
+                Determine if the company meets the eligibility criteria for this RFP by comparing the RFP requirements against the company's qualifications.
+
+                # RFP Requirements
+                {requirements_text}
+
+                # Company's Qualifications
+                {company_data}
+
+                # ReAct Format
+                Follow this step-by-step process:
+
+                1. Thought: [Think about what criteria needs to be evaluated]
+                2. Action: [Look for specific criteria in the requirements]
+                3. Observation: [Note what you found or didn't find about this criteria]
+                4. Thought: [Analyze if the company meets this requirement]
+                5. Action: [Look for evidence of this capability in company data]
+                6. Observation: [Note what evidence you found or didn't find]
+
+                Repeat this process for each of these categories:
+                - Required certifications and accreditations
+                - State/federal registrations and legal status
+                - Required past experience and project history
+                - Technical capabilities required by the RFP
+                - Compliance with any special requirements
+
+                After your analysis, provide a structured output following this format:
+                {format_instructions}
         """
         
         # Add feedback from previous iterations if available
@@ -419,9 +392,13 @@ class EligibilityAnalyzerAgent:
             
         return critique, score
     
-    def analyze_eligibility(self, rfp_path: str) -> EligibilityAgentOutput:
-        """Legacy method for backward compatibility"""
-        return self.analyze_eligibility_react(rfp_path, iterations=1)
+    def analyze_eligibility(self, rfp_chunks: List, company_chunks: List) -> EligibilityAgentOutput:
+        """Simplified method to analyze eligibility from pre-processed chunks"""
+        return self.analyze_eligibility_from_chunks(company_chunks, rfp_chunks, iterations=1)
+    
+    def extract_eligibility_requirements(self, rfp_chunks: List) -> Dict[str, Any]:
+        """Wrapper method to extract RFP requirements for external use"""
+        return self.extract_rfp_requirements(rfp_chunks)
     
     def clear_vector_stores(self) -> bool:
         """Clear the vector stores for fresh analysis"""
@@ -457,18 +434,26 @@ class EligibilityAnalyzerAgent:
 
 # Example usage
 if __name__ == "__main__":
+    from helper.loading_docs import load_document, split_documents_semantic
+    
     eligibility_analyzer_agent = EligibilityAnalyzerAgent()
     
     # Optional: Clear previous vector databases for fresh analysis
     eligibility_analyzer_agent.clear_vector_stores()
     
-    # Load company profile
-    eligibility_analyzer_agent.load_company_profile("./documents/company_data/Company Data.docx")
+    # Load and process documents
+    company_document = load_document("./documents/company_data/Company Data.docx", "company_document")
+    rfp_document = load_document("./documents/RFPs/IN-ELIGIBLE_RFP.pdf", "rfp_document")
     
-    # Analyze eligibility for a specific RFP with ReAct approach (3 iterations)
-    result = eligibility_analyzer_agent.analyze_eligibility_react(
-        "documents/RFPs/IN-ELIGIBLE_RFP.pdf", 
-        iterations=3
+    # Split into semantic chunks
+    company_chunks = split_documents_semantic(company_document)
+    rfp_chunks = split_documents_semantic(rfp_document)
+    
+    # Analyze eligibility using pre-processed chunks
+    result = eligibility_analyzer_agent.analyze_eligibility_from_chunks(
+        company_chunks=company_chunks, 
+        rfp_chunks=rfp_chunks, 
+        iterations=1
     )
     
     # Print results
@@ -480,8 +465,8 @@ if __name__ == "__main__":
         print(f"  - {action}")
 
     # Save final result
-    with open("eligibility.json", "w") as f:
+    with open(config.ELIGIBILITY_JSON, "w") as f:
         json.dump(result.model_dump(), f, indent=2)
     
     # Save feedback history
-    eligibility_analyzer_agent.save_feedback_history()
+    eligibility_analyzer_agent.save_feedback_history(filename=config.FEEDBACK_ELIGIBILITY_JSON)

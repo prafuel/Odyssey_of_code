@@ -1,7 +1,7 @@
 import os
 import json
 import time
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List
 from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
 from langchain_community.vectorstores import Chroma
@@ -10,14 +10,16 @@ from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.runnables import RunnablePassthrough, RunnableMap
-from pydantic import BaseModel, Field
 from typing import List
-from config import config
 from dotenv import load_dotenv
 
-from helper.loading_docs import load_document, split_documents_semantic
-from helper.semantic_chunking import SemanticChunker
+from config import config
 from schema import RiskAnalysisWithReasoning, RiskAnalysisOutput, RiskClause, ReasoningStep
+
+# from agents.config import config
+# from agents.schema import RiskAnalysisWithReasoning, RiskAnalysisOutput, RiskClause, ReasoningStep
+
+
 
 load_dotenv()
 
@@ -27,7 +29,7 @@ class ReActRiskClauseAnalyzerAgent:
         self.EMBEDDING_MODEL = config.EMBEDDING_MODEL
         self.MAIN_LLM = config.MAIN_LLM
         self.MAX_ITERATIONS = 3
-        self.FEEDBACK_HISTORY_FILE = "risk_analysis_feedback_history.json"
+        self.FEEDBACK_HISTORY_FILE = config.RISK_ANALYSIS_JSON
 
         os.makedirs(self.RISK_VD, exist_ok=True)
 
@@ -211,7 +213,7 @@ class ReActRiskClauseAnalyzerAgent:
         # Add feedback from previous iterations
         previous_analysis = ""
         if previous_result:
-            previous_analysis = f"\nPREVIOUS ITERATION ANALYSIS:\n{json.dumps(previous_result.dict(), indent=2)}"
+            previous_analysis = f"\nPREVIOUS ITERATION ANALYSIS:\n{json.dumps(previous_result.model_dump(), indent=2)}"
 
         # Add historical feedback
         historical_feedback = self._get_previous_analysis_summary(rfp_path)
@@ -392,6 +394,12 @@ class ReActRiskClauseAnalyzerAgent:
             Provide specific examples of improvements and areas still needing focus.
             
             Format your response as a valid JSON with the following structure:
+            {{
+                "improvement_score": 7.5,
+                "feedback": "Detailed feedback here...",
+                "key_improvements": ["Improvement 1", "Improvement 2"],
+                "areas_to_focus": ["Area 1", "Area 2"]
+            }}
             """
         
         eval_response = self.llm.invoke(eval_prompt)
@@ -546,12 +554,12 @@ if __name__ == "__main__":
     compliance_result = None
 
     try:
-        if os.path.exists("eligibility_result.json"):
-            with open("eligibility_result.json", "r") as f:
+        if os.path.exists(config.ELIGIBILITY_JSON):
+            with open(config.ELIGIBILITY_JSON, "r") as f:
                 eligibility_result = json.load(f)
 
-        if os.path.exists("compliance_checklist.json"):
-            with open("compliance_checklist.json", "r") as f:
+        if os.path.exists(config.COMPLIANCE_CHECKLIST_JSON):
+            with open(config.COMPLIANCE_CHECKLIST_JSON, "r") as f:
                 compliance_result = json.load(f)
     except Exception as e:
         print(f"⚠️ Could not load previous agent outputs: {e}")
@@ -564,5 +572,5 @@ if __name__ == "__main__":
     )
 
     print("\n📊 SAVING FINAL RISK ANALYSIS OUTPUT:")
-    with open("contract_risk_analysis.json", "w") as f:
+    with open(config.CONTRACT_RISK_JSON, "w") as f:
         json.dump(result.model_dump(), f, indent=2)

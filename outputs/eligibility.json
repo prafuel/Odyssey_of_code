@@ -1,0 +1,24 @@
+{
+  "eligible": false,
+  "reasons": [
+    "Lack of direct evidence of experience with Craft Content Management System (CMS)",
+    "Insufficient information on technical capabilities for user-friendly and mobile-responsive website development",
+    "No clear plan for compliance with proposal submission guidelines"
+  ],
+  "missing_requirements": [
+    "Comprehensive General Liability coverage of at least $1,000,000",
+    "Experience with Craft CMS",
+    "Technical capabilities for website development and maintenance",
+    "Compliance with special proposal submission requirements"
+  ],
+  "matching_requirements": [
+    "Texas Employment Agency License",
+    "SAM.gov registration"
+  ],
+  "recommended_actions": [
+    "Obtain necessary insurance coverage",
+    "Develop experience with Craft CMS",
+    "Enhance technical capabilities for website development",
+    "Establish a plan for complying with proposal submission guidelines"
+  ]
+}

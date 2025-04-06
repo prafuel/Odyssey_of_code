@@ -1,0 +1,18 @@
+{
+  "eligible": false,
+  "reasons": [
+    "Company does not have certification 'EX 152433'",
+    "Company does not have experience in updating and centralizing department and program websites",
+    "Company does not have knowledge and demonstrated use of current Craft Content Management System (CMS)"
+  ],
+  "missing_requirements": [
+    "EX 152433 certification",
+    "Experience in updating and centralizing department and program websites",
+    "Knowledge and demonstrated use of current Craft Content Management System (CMS)"
+  ],
+  "matching_requirements": [
+    "SRMT is a tax-exempt organization",
+    "Providing and maintaining insurance coverage for the duration of the contract period"
+  ],
+  "recommended_actions": []
+}

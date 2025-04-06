@@ -1,0 +1,122 @@
+{
+  "checklist": {
+    "DOCUMENT_FORMAT_REQUIREMENTS": {
+      "page_limits": {
+        "description": "Page limit for the entire proposal",
+        "type": "string",
+        "value": "Not specified"
+      },
+      "font_specifications": {
+        "description": "Font specifications",
+        "type": "string",
+        "value": "Not specified"
+      },
+      "margin_requirements": {
+        "description": "Margin requirements",
+        "type": "string",
+        "value": "Not specified"
+      },
+      "line_spacing": {
+        "description": "Line spacing",
+        "type": "string",
+        "value": "Not specified"
+      },
+      "header_footer_specifications": {
+        "description": "Header and footer specifications",
+        "type": "string",
+        "value": "Not specified"
+      },
+      "table_of_contents_requirements": {
+        "description": "Table of contents requirements",
+        "type": "string",
+        "value": "Not specified"
+      },
+      "section_numbering_conventions": {
+        "description": "Section numbering conventions",
+        "type": "string",
+        "value": "Not specified"
+      },
+      "file_format_requirements": {
+        "description": "File format requirements",
+        "type": "string",
+        "value": "Not specified"
+      }
+    },
+    "SUBMISSION_LOGISTICS": {
+      "submission_deadline": {
+        "description": "Submission deadline",
+        "type": "string",
+        "value": "February 27, 2025, at 2:00 P.M."
+      },
+      "submission_method": {
+        "description": "Submission method",
+        "type": "string",
+        "value": "Email to mhmr.purchasing@mhmrtc.org"
+      },
+      "number_of_copies_required": {
+        "description": "Number of copies required",
+        "type": "integer",
+        "value": "Not specified"
+      },
+      "special_packaging_or_labeling_instructions": {
+        "description": "Special packaging or labeling instructions",
+        "type": "string",
+        "value": "Not specified"
+      }
+    },
+    "REQUIRED_COMPONENTS": {
+      "mandatory_forms_and_attachments": {
+        "description": "Mandatory forms and attachments",
+        "type": "array",
+        "value": [
+          "Copy of licenses, certifications, registration, permit, etc.",
+          "Certificate of Insurance",
+          "List of at least three (3) references related to the type of services or products specified in this RFP"
+        ]
+      },
+      "required_certifications_or_acknowledgments": {
+        "description": "Required certifications or acknowledgments",
+        "type": "array",
+        "value": [
+          "Not specified"
+        ]
+      },
+      "required_signatures_and_their_locations": {
+        "description": "Required signatures and their locations",
+        "type": "array",
+        "value": [
+          "Signed in ink by a person or office or the company submitting the Proposal that is authorized to enter into contractual agreements on behalf of the company"
+        ]
+      },
+      "specific_section_organization_requirements": {
+        "description": "Specific section organization requirements",
+        "type": "string",
+        "value": "Proposals must follow the format outlined below: Tab 1 \u2013 Cover Letter, Tab 2 \u2013 Executive Summary, etc."
+      },
+      "required_table_formats": {
+        "description": "Required table formats",
+        "type": "array",
+        "value": [
+          "Not specified"
+        ]
+      },
+      "required_graphics_or_visual_elements": {
+        "description": "Required graphics or visual elements",
+        "type": "array",
+        "value": [
+          "Not specified"
+        ]
+      }
+    },
+    "DEAL_BREAKERS": {
+      "critical_requirements": {
+        "description": "Critical requirements",
+        "type": "array",
+        "value": [
+          "Any proposal submitted with knowledge, or reason to believe there is an error or omission in this RFP is prohibited from using such error or omission as an advantage",
+          "A CURRENT \u201cCERTIFICATE OF INSURANCE\u201d MUST ACCOMPANY ALL PROPOSALS"
+        ]
+      }
+    }
+  }
+}

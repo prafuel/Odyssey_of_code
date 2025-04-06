@@ -1,0 +1,119 @@
+[
+  {
+    "timestamp": "2025-04-06 14:42:34",
+    "rfp_path": "ELIGIBLE RFP - 2.pdf",
+    "key_findings": [],
+    "improvement_areas": [
+      "Ensure comprehensive coverage of all risk categories",
+      "Provide detailed alternatives for high-risk clauses"
+    ],
+    "feedback_score": null,
+    "risk_level": "Medium"
+  },
+  {
+    "timestamp": "2025-04-06 14:43:02",
+    "rfp_path": "ELIGIBLE RFP - 2.pdf",
+    "key_findings": [],
+    "improvement_areas": [
+      "Continue refining the analysis"
+    ],
+    "feedback_score": 5.0,
+    "risk_level": "High"
+  },
+  {
+    "timestamp": "2025-04-06 14:43:52",
+    "rfp_path": "ELIGIBLE RFP - 2.pdf",
+    "key_findings": [
+      "Termination: This clause allows the District to unilaterally terminate the contract without notice, posing a high risk for the vendor.",
+      "Indemnification: This clause implies that the vendor is fully liable for any permits and fees, without defining the scope or fault."
+    ],
+    "improvement_areas": [
+      "Continue refining the analysis"
+    ],
+    "feedback_score": 7.5,
+    "risk_level": "High"
+  },
+  {
+    "timestamp": "2025-04-06 14:44:35",
+    "rfp_path": "ELIGIBLE RFP - 2.pdf",
+    "key_findings": [
+      "Termination: This clause allows the District to unilaterally terminate the contract without notice, posing a high risk for the vendor.",
+      "Indemnification: This clause implies that the vendor is fully liable for any permits and fees, without defining the scope or fault."
+    ],
+    "improvement_areas": [
+      "Ensure comprehensive coverage of all risk categories",
+      "Provide detailed alternatives for high-risk clauses"
+    ],
+    "feedback_score": null,
+    "risk_level": "High"
+  },
+  {
+    "timestamp": "2025-04-06 14:45:29",
+    "rfp_path": "ELIGIBLE RFP - 2.pdf",
+    "key_findings": [
+      "Termination: This clause allows the District to unilaterally terminate the contract without notice, posing a high risk for the vendor.",
+      "Indemnification: This clause implies that the vendor is fully liable for the district's use of the proposal, without defining the scope or fault."
+    ],
+    "improvement_areas": [
+      "Continue refining the analysis"
+    ],
+    "feedback_score": 7.5,
+    "risk_level": "High"
+  },
+  {
+    "timestamp": "2025-04-06 14:46:26",
+    "rfp_path": "ELIGIBLE RFP - 2.pdf",
+    "key_findings": [],
+    "improvement_areas": [
+      "Continue refining the analysis"
+    ],
+    "feedback_score": 5.0,
+    "risk_level": "Medium"
+  },
+  {
+    "timestamp": "2025-04-06 16:50:32",
+    "rfp_path": "ELIGIBLE RFP - 2.pdf",
+    "key_findings": [
+      "Termination: Unilateral withdrawal without clear criteria or appeal process",
+      "Indemnification: Full responsibility for permits and fees without shared responsibility",
+      "Intellectual Property: Overly restrictive, potentially limiting vendor\u2019s use of their methodologies"
+    ],
+    "improvement_areas": [
+      "Ensure comprehensive coverage of all risk categories",
+      "Provide detailed alternatives for high-risk clauses"
+    ],
+    "feedback_score": null,
+    "risk_level": "Medium"
+  },
+  {
+    "timestamp": "2025-04-06 16:51:24",
+    "rfp_path": "ELIGIBLE RFP - 2.pdf",
+    "key_findings": [
+      "Termination: Unilateral withdrawal without clear criteria or appeal process",
+      "Indemnification: Full responsibility for permits and fees without shared responsibility",
+      "Intellectual Property: Overly restrictive, potentially limiting vendor's use of their methodologies",
+      "Payment Terms: Vendor bears all costs associated with proposal preparation, regardless of outcome"
+    ],
+    "improvement_areas": [
+      "Continue refining the analysis"
+    ],
+    "feedback_score": 5.0,
+    "risk_level": "Medium"
+  },
+  {
+    "timestamp": "2025-04-06 16:52:15",
+    "rfp_path": "ELIGIBLE RFP - 2.pdf",
+    "key_findings": [
+      "Termination: Unilateral withdrawal without clear criteria or appeal process, potentially leading to vendor loss of investment and resources",
+      "Indemnification: Full responsibility for permits and fees without shared responsibility, potentially leading to unforeseen costs for the vendor",
+      "Intellectual Property: Overly restrictive, potentially limiting vendor's use of their methodologies and intellectual property",
+      "Payment Terms: Vendor bears all costs associated with proposal preparation, regardless of outcome, potentially leading to financial loss",
+      "Confidentiality: Lack of protection for vendor's confidential information, potentially leading to intellectual property theft"
+    ],
+    "improvement_areas": [
+      "Continue refining the analysis"
+    ],
+    "feedback_score": 5.0,
+    "risk_level": "High"
+  }
+]
