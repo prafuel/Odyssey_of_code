@@ -60,42 +60,42 @@ class RiskClauseAnalyzerAgent:
             additional_context = "No prior agent context available."
 
         reference_examples = """
-            Category: Termination
-            Problematic: "The client may terminate this agreement at any time without notice."
-            Risk: This clause allows the client to cancel the contract unilaterally, posing a high risk for the vendor.
-            Alternative: "Either party may terminate the agreement with a 30-day written notice."
+Category: Termination
+Problematic: "The client may terminate this agreement at any time without notice."
+Risk: This clause allows the client to cancel the contract unilaterally, posing a high risk for the vendor.
+Alternative: "Either party may terminate the agreement with a 30-day written notice."
 
-            Category: Indemnification
-            Problematic: "The vendor shall indemnify the client for any and all losses."
-            Risk: This implies unlimited liability without defining scope or fault.
-            Alternative: "The vendor shall indemnify the client for direct losses arising from proven negligence."
-        """
+Category: Indemnification
+Problematic: "The vendor shall indemnify the client for any and all losses."
+Risk: This implies unlimited liability without defining scope or fault.
+Alternative: "The vendor shall indemnify the client for direct losses arising from proven negligence."
+"""
 
         prompt_template = """
-            You are a legal risk analysis expert.
+You are a legal risk analysis expert.
 
-            Your task is to analyze the provided RFP for contractual clauses that may pose a risk to the vendor.
+Your task is to analyze the provided RFP for contractual clauses that may pose a risk to the vendor.
 
-            Identify:
-            - The clause category (Termination, Indemnification, Exit Clause, IP Rights, Payment Terms)
-            - A direct quote of the problematic clause
-            - A short explanation of why it's problematic
-            - A more balanced alternative clause
+Identify:
+- The clause category (Termination, Indemnification, Exit Clause, IP Rights, Payment Terms)
+- A direct quote of the problematic clause
+- A short explanation of why it's problematic
+- A more balanced alternative clause
 
-            Provide your output in this structured JSON format:
-            {format_instructions}
+Provide your output in this structured JSON format:
+{format_instructions}
 
-            RFP Content:
-            {context}
+RFP Content:
+{context}
 
-            Reference examples of problematic vs. balanced clauses:
-            {reference_examples}
+Reference examples of problematic vs. balanced clauses:
+{reference_examples}
 
-            Additional Context from Previous Analysis:
-            {additional_context}
+Additional Context from Previous Analysis:
+{additional_context}
 
-            End with a summary of the overall risk level of this RFP.
-            """
+End with a summary of the overall risk level of this RFP.
+"""
 
         rag_prompt = PromptTemplate(
             input_variables=["context", "reference_examples", "additional_context"],
@@ -160,7 +160,7 @@ if __name__ == "__main__":
     )
 
     print("\n📊 RISK ANALYSIS OUTPUT:")
-    print(json.dumps(result.model_dump(), indent=2))
+    print(json.dumps(result.dict(), indent=2))
 
     with open("risk_analysis.json", "w") as f:
-        json.dump(result.model_dump(), f, indent=2)
+        json.dump(result.dict(), f, indent=2)

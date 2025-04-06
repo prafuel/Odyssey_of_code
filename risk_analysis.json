@@ -3,21 +3,21 @@
     {
       "category": "Indemnification",
       "problematic_clause": "CONTRACTOR, ON BEHALF OF ITSELF OR ITS PERSONNEL PROVIDING SERVICES UNDER THIS AGREEMENT, FURTHER HEREBY RELEASES AND AGREES TO INDEMNIFY AND HOLD HARMLESS MHMR AND ALL ITS TRUSTEES, OFFICERS, EMPLOYEES, AGENTS, SUCCESSORS AND ASSIGNS FROM ALL SUITS, ACTIONS, CLAIMS, COSTS, EXPENSES, LIABILITIES, LOSSES, DAMAGES, OBLIGATIONS, PENALTIES, FINES, DEMANDS, RIGHTS AND CONTROVERSIES OF ANY KIND AND CHARACTER WHATSOEVER (COLLECTIVELY, THE \u201cLIABILITIES\u201d), WHETHER ARISING UNDER",
-      "risk_assessment": "This clause implies unlimited liability without defining scope or fault, posing a high risk for the vendor.",
-      "suggested_alternative": "The vendor shall indemnify the client for direct losses arising from proven negligence or breach of contract."
+      "risk_assessment": "This clause is problematic because it implies unlimited liability without defining scope or fault, which may lead to unintended consequences for the vendor.",
+      "suggested_alternative": "The vendor shall indemnify the client for direct losses arising from proven negligence."
     },
     {
       "category": "Termination",
-      "problematic_clause": "MHMR IN ITS SOLE AND ABSOLUTE DISCRETION SHALL HAVE THE RIGHT TO AWARD CONTRACTS FOR ANY OR ALL MATERIALS LISTED IN EACH PROPOSAL, SHALL HAVE THE RIGHT TO REJECT ANY AND ALL PROPOSALS, AND SHALL NOT BE BOUND TO ACCEPT THE LOWEST PROPOSAL AND SHALL BE ALLOWED TO ACCEPT THE TOTAL PROPOSAL OF ANY ONE CONTRACTOR, OR AS OTHERWISE STATED IN THIS PROPOSAL.",
-      "risk_assessment": "This clause allows the client to cancel the contract unilaterally, posing a high risk for the vendor.",
+      "problematic_clause": "ACKNOWLEDGEMENT RFP 25-008 TEMPORARY STAFFING SERVICES MHMR IN ITS SOLE AND ABSOLUTE DISCRETION SHALL HAVE THE RIGHT TO AWARDS FOR ANY OR ALL MATERIALS LISTED IN EACH PROPOSAL, SHALL HAVE THE RIGHT TO REJECT ANY AND ALL PROPOSALS, AND SHALL NOT BE BOUND TO ACCEPT THE LOWEST PROPOSAL AND SHALL BE ALLOWED TO ACCEPT THE TOTAL PROPOSAL OF ANY ONE CONTRACTOR, OR AS OTHERWISE STATED IN THIS PROPOSAL.",
+      "risk_assessment": "This clause is problematic because it gives the client too much discretion to terminate the contract without notice, which may pose a high risk for the vendor.",
       "suggested_alternative": "Either party may terminate the agreement with a 30-day written notice."
     },
     {
       "category": "Payment Terms",
-      "problematic_clause": "A CURRENT \u201cCERTIFICATE OF INSURANCE\u201d MUST ACCOMPANY ALL PROPOSALS",
-      "risk_assessment": "This clause requires the vendor to provide a Certificate of Insurance without specifying the type or scope of insurance, which may lead to unnecessary costs and administrative burdens.",
-      "suggested_alternative": "The vendor shall provide proof of insurance coverage that meets the requirements specified in the RFP, including type and scope of coverage."
+      "problematic_clause": "ALL PROPOSALS MUST BE AN IRREVOCABLE OFFER VALID FOR 120 CALENDAR DAYS AFTER THE PROPOSAL OPENING.",
+      "risk_assessment": "This clause may pose a risk for the vendor because it requires an irrevocable offer for an extended period, which may limit the vendor's ability to negotiate or withdraw its proposal.",
+      "suggested_alternative": "Proposals shall be valid for a reasonable period, to be determined by mutual agreement between the parties."
     }
   ],
-  "summary": "The overall risk level of this RFP is moderate to high due to the presence of clauses that may impose undue liability, termination risks, and administrative burdens on the vendor. The vendor should carefully review and negotiate these clauses to minimize risks and ensure a fair and equitable agreement."
+  "summary": "Overall, this RFP presents moderate to high risk for the vendor due to the lack of clarity and flexibility in certain clauses, such as indemnification, termination, and payment terms. The RFP's requirements for confidentiality, non-collusion, and proposal format also present potential risks for the vendor. It is essential for the vendor to carefully review and negotiate these clauses to mitigate potential risks and ensure a successful partnership."
 }
