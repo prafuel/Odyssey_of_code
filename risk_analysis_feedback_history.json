@@ -1,159 +1,6 @@
 [
   {
-    "timestamp": "2025-04-06 08:25:14",
-    "rfp_path": "ELIGIBLE RFP - 1.pdf",
-    "key_findings": [],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "Medium"
-  },
-  {
-    "timestamp": "2025-04-06 08:29:30",
-    "rfp_path": "ELIGIBLE RFP - 1.pdf",
-    "key_findings": [
-      "Termination: This clause allows MHMR to unilaterally terminate the contract without notice, posing a high risk for the vendor.",
-      "Indemnification: This clause implies unlimited liability without defining scope or fault, posing a high risk for the vendor."
-    ],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 08:32:52",
-    "rfp_path": "ELIGIBLE RFP - 1.pdf",
-    "key_findings": [],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "Medium"
-  },
-  {
-    "timestamp": "2025-04-06 08:33:41",
-    "rfp_path": "ELIGIBLE RFP - 1.pdf",
-    "key_findings": [
-      "Termination: This clause allows MHMR to unilaterally award contracts without notice, posing a high risk for the vendor.",
-      "Indemnification: This clause implies unlimited liability without defining scope or fault, posing a high risk for the vendor.",
-      "Insurance: This clause requires vendors to provide insurance certificates without specifying the required coverage or limits, posing a risk for vendors.",
-      "Payment Terms: This clause binds the vendor to the proposal for 120 days without guaranteeing payment or acceptance."
-    ],
-    "improvement_areas": [
-      "Development of a clear risk assessment methodology or criteria",
-      "Further evaluation of the impact of identified risks on vendors"
-    ],
-    "feedback_score": 7.5,
-    "risk_level": "Medium"
-  },
-  {
-    "timestamp": "2025-04-06 08:34:55",
-    "rfp_path": "ELIGIBLE RFP - 1.pdf",
-    "key_findings": [
-      "Deviation: This clause requires prospective contractors to sign the Deviation Form without providing an opportunity for them to review and agree to the terms and conditions, posing a risk for vendors.",
-      "Insurance: This clause may pose a risk for vendors who are required to ensure their subcontractors have the required insurance coverage and amounts, but the clause does not specify what those requirements are, which may lead to unexpected costs or liabilities."
-    ],
-    "improvement_areas": [
-      "The risk assessment could be improved by providing more concrete evidence and data to support the risk level assessment.",
-      "The overall improvement could be increased by more thoroughly addressing the potential risks and providing more detailed alternatives for high-risk clauses."
-    ],
-    "feedback_score": 7.5,
-    "risk_level": "Medium"
-  },
-  {
-    "timestamp": "2025-04-06 08:44:35",
-    "rfp_path": "ELIGIBLE RFP - 1.pdf",
-    "key_findings": [
-      "Governmental Immunity: This clause may pose a risk for the vendor as it implies that MHMR Tarrant may have immunities from suit or liability that could impact the vendor's ability to enforce its rights or recover damages.",
-      "Death or Damage: This clause may pose a risk for the vendor as it requires the vendor to release and indemnify MHMR and its affiliates from all suits, actions, claims, costs, expenses, liabilities, losses, damages, obligations, penalties, fines, demands, rights, and controversies of any kind and character whatsoever.",
-      "Certification of Insurance: This clause may pose a risk for the vendor as it requires the vendor to provide a certificate of insurance without specifying the required coverage or limits, which may lead to unexpected costs or liabilities."
-    ],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 08:45:23",
-    "rfp_path": "ELIGIBLE RFP - 1.pdf",
-    "key_findings": [
-      "Governmental Immunity: This clause may pose a risk for the vendor as it implies that MHMR Tarrant may have immunities from suit or liability that could impact the vendor's ability to enforce its rights or recover damages.",
-      "Death or Damage: This clause may pose a risk for the vendor as it requires the vendor to release and indemnify MHMR and its affiliates from all suits, actions, claims, costs, expenses, liabilities, losses, damages, obligations, penalties, fines, demands, rights, and controversies of any kind and character whatsoever.",
-      "Certification of Insurance: This clause may pose a risk for the vendor as it requires the vendor to provide a certificate of insurance without specifying the required coverage or limits, which may lead to unexpected costs or liabilities.",
-      "Acknowledgement: This clause may pose a risk for the vendor as it grants MHMR sole and absolute discretion in awarding contracts, which may lead to arbitrary and unfair decision-making.",
-      "Subcontracting: This clause may pose a risk for the vendor as it requires the vendor to ensure its subcontractors have the required insurance coverage and amounts, but does not specify what those requirements are, which may lead to unexpected costs or liabilities."
-    ],
-    "improvement_areas": [
-      "Fix evaluation parsing",
-      "Continue refining the analysis"
-    ],
-    "feedback_score": 5.0,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 08:46:41",
-    "rfp_path": "ELIGIBLE RFP - 1.pdf",
-    "key_findings": [
-      "Indemnification: This clause may pose a risk for vendors as it implies that MHMR Tarrant may have immunities from suit or liability that could impact the vendor's ability to enforce its rights or recover damages.",
-      "Indemnification: This clause may pose a risk for vendors as it requires them to release and indemnify MHMR and its affiliates from all suits, actions, claims, costs, expenses, liabilities, losses, damages, obligations, penalties, fines, demands, rights, and controversies of any kind and character whatsoever.",
-      "Insurance: This clause may pose a risk for vendors as it requires them to provide a certificate of insurance without specifying the required coverage or limits, which may lead to unexpected costs or liabilities."
-    ],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 08:47:27",
-    "rfp_path": "ELIGIBLE RFP - 1.pdf",
-    "key_findings": [
-      "Governmental Immunity: This clause may pose a risk for the vendor as it implies that MHMR Tarrant may have immunities from suit or liability that could impact the vendor's ability to enforce its rights or recover damages.",
-      "Indemnification: This clause may pose a risk for the vendor as it requires them to release and indemnify MHMR and its affiliates from all suits, actions, claims, costs, expenses, liabilities, losses, damages, obligations, penalties, fines, demands, rights, and controversies of any kind and character whatsoever.",
-      "Certification of Insurance: This clause may pose a risk for the vendor as it requires them to provide a certificate of insurance without specifying the required coverage or limits, which may lead to unexpected costs or liabilities."
-    ],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 08:49:41",
-    "rfp_path": "IN-ELIGIBLE_RFP.pdf",
-    "key_findings": [],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "Medium"
-  },
-  {
-    "timestamp": "2025-04-06 08:50:41",
-    "rfp_path": "ELIGIBLE RFP - 2.pdf",
-    "key_findings": [
-      "Termination for Cause: This clause allows the District to terminate the contract without notice, posing a high risk for the vendor.",
-      "Indemnification: This implies unlimited liability without defining scope or fault, posing a high risk for the vendor."
-    ],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 08:52:31",
+    "timestamp": "2025-04-06 10:32:23",
     "rfp_path": "ELIGIBLE RFP - 2.pdf",
     "key_findings": [],
     "improvement_areas": [
@@ -164,123 +11,23 @@
     "risk_level": "Medium"
   },
   {
-    "timestamp": "2025-04-06 08:54:00",
-    "rfp_path": "ELIGIBLE RFP - 2.pdf",
-    "key_findings": [
-      "Termination: This clause allows the District to terminate the contract unilaterally, posing a high risk for the vendor.",
-      "Termination: This clause allows the District to terminate the contract without notice, posing a high risk for the vendor.",
-      "Indemnification: This implies unlimited liability without defining scope or fault, posing a high risk for the vendor.",
-      "Proposals: This clause may lead to unforeseen consequences and pose a risk for the vendor.",
-      "Proposals: This clause may pose a risk for the vendor if the District uses the proposal for purposes other than evaluation.",
-      "Submission Logistics: This clause may pose a risk for the vendor if the District does not intend to honor their commitments."
-    ],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 09:10:04",
-    "rfp_path": "ELIGIBLE RFP - 2.pdf",
-    "key_findings": [
-      "Termination: This clause allows the District to terminate the contract unilaterally, posing a high risk for the vendor, as it may be terminated without notice or justification.",
-      "Termination: This clause allows the District to terminate the contract without notice, posing a high risk for the vendor.",
-      "Indemnification: This clause implies unlimited liability without defining scope or fault, posing a high risk for the vendor.",
-      "Submission Logistics: This clause may pose a risk for the vendor if the District does not intend to honor their commitments.",
-      "Proposals: This clause may pose a risk for the vendor if the District uses the proposal for purposes other than evaluation."
-    ],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 09:11:27",
-    "rfp_path": "ELIGIBLE RFP - 2.pdf",
-    "key_findings": [
-      "Termination: This clause allows the District to terminate the contract unilaterally, posing a high risk for the vendor, as it may be terminated without notice or justification.",
-      "Termination: This clause allows the District to terminate the contract without notice, posing a high risk for the vendor, as it may be terminated without justification.",
-      "Indemnification: This clause implies unlimited liability without defining scope or fault, posing a high risk for the vendor.",
-      "Submission Logistics: This clause may pose a risk for the vendor if the District uses the proposal for purposes other than evaluation."
-    ],
-    "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
-    ],
-    "feedback_score": null,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 09:12:30",
-    "rfp_path": "ELIGIBLE RFP - 2.pdf",
-    "key_findings": [
-      "Termination: This clause allows the District to terminate the contract unilaterally, posing a high risk for the vendor, as it may be terminated without notice or justification.",
-      "Termination: This clause allows the District to terminate the contract without notice, posing a high risk for the vendor, as it may be terminated without justification.",
-      "Indemnification: This clause implies unlimited liability without defining scope or fault, posing a high risk for the vendor.",
-      "Submission Logistics: This clause may pose a risk for the vendor if the District uses the proposal for purposes other than evaluation."
-    ],
-    "improvement_areas": [
-      "Continue refining the analysis"
-    ],
-    "feedback_score": 5.0,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 09:13:42",
-    "rfp_path": "ELIGIBLE RFP - 2.pdf",
-    "key_findings": [
-      "Termination: This clause allows the District to terminate the contract unilaterally, posing a high risk for the vendor, as it may be terminated without notice or justification.",
-      "Termination: This clause allows the District to terminate the contract without notice, posing a high risk for the vendor, as it may be terminated without justification.",
-      "Indemnification: This clause implies unlimited liability without defining scope or fault, posing a high risk for the vendor.",
-      "Submission Logistics: This clause may pose a risk for the vendor if the District uses the proposal for purposes other than evaluation."
-    ],
-    "improvement_areas": [
-      "Continue refining the analysis"
-    ],
-    "feedback_score": 5.0,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 09:14:54",
+    "timestamp": "2025-04-06 10:33:06",
     "rfp_path": "ELIGIBLE RFP - 2.pdf",
     "key_findings": [],
     "improvement_areas": [
-      "Ensure comprehensive coverage of all risk categories",
-      "Provide detailed alternatives for high-risk clauses"
+      "Continue refining the analysis"
     ],
-    "feedback_score": null,
+    "feedback_score": 5.0,
     "risk_level": "Medium"
   },
   {
-    "timestamp": "2025-04-06 09:15:40",
+    "timestamp": "2025-04-06 10:33:49",
     "rfp_path": "ELIGIBLE RFP - 2.pdf",
-    "key_findings": [
-      "Termination: This clause allows the District to terminate the contract unilaterally, posing a high risk for the vendor, as it may be terminated without notice or justification.",
-      "Indemnification: This clause implies unlimited liability without defining scope or fault, posing a high risk for the vendor.",
-      "Submission Logistics: This clause may pose a risk for the vendor if the District uses the proposal for purposes other than evaluation."
-    ],
+    "key_findings": [],
     "improvement_areas": [
       "Continue refining the analysis"
     ],
     "feedback_score": 5.0,
-    "risk_level": "High"
-  },
-  {
-    "timestamp": "2025-04-06 09:16:56",
-    "rfp_path": "ELIGIBLE RFP - 2.pdf",
-    "key_findings": [
-      "Termination: This clause allows the District to terminate the contract unilaterally, posing a high risk for the vendor, as it may be terminated without notice or justification, and the District is exempt from liability, which exacerbates the risk.",
-      "Confidentiality: This clause may pose a risk for the vendor as it implies that all information shared with the District is non-confidential, which may put sensitive information at risk.",
-      "Permits and Fees: This clause may pose a risk for the vendor as it implies that the vendor is responsible for obtaining and paying for all necessary permits and fees, which may be time-consuming and costly."
-    ],
-    "improvement_areas": [
-      "Continue refining the analysis"
-    ],
-    "feedback_score": 5.0,
-    "risk_level": "High"
+    "risk_level": "Medium"
   }
 ]

@@ -30,7 +30,7 @@ class ComplianceChecklistAgent:
         self.parser = PydanticOutputParser(pydantic_object=ComplianceChecklistOutput)
         
         # Initialize LLM
-        self.llm = ChatGroq(modeswwwwwwwl_name=config.MAIN_LLM)
+        self.llm = ChatGroq(model_name=config.MAIN_LLM)
         
         # RFP data
         self.rfp_vectorstore = None

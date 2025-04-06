@@ -1,23 +1,31 @@
 import os
 import json
 import time
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
 from langchain_groq import ChatGroq
 from schema import EligibilityAgentOutput
 from langchain.prompts import PromptTemplate
 from langchain_community.vectorstores import Chroma
 from langchain_core.output_parsers import PydanticOutputParser
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.text_splitter import (
+    RecursiveCharacterTextSplitter,
+)
+from langchain_experimental.text_splitter import SemanticChunker
 from langchain_core.runnables import RunnablePassthrough, RunnableParallel
-from langchain_community.document_loaders import PyMuPDFLoader, Docx2txtLoader
+from langchain_community.document_loaders import (
+    PyPDFLoader,
+    Docx2txtLoader,
+    TextLoader
+)
 
 from config import config
-from helper.semantic_chunking import SemanticChunker
+from helper.loading_docs import load_document, split_documents_semantic
 from schema import EligibilityAgentOutput
 
 from dotenv import load_dotenv
 load_dotenv()
+
 
 class EligibilityAnalyzerAgent:
     def __init__(self):
@@ -35,81 +43,72 @@ class EligibilityAnalyzerAgent:
         
         # Initialize LLM
         self.llm = ChatGroq(model_name=config.MAIN_LLM)
-
-        # Chunking Strategy
-        self.chunker = SemanticChunker(self.llm)
         
         # Company profile data
         self.company_vectorstore = None
         self.company_retriever = None
         
+        # RFP data
+        self.rfp_vectorstore = None
+        self.rfp_retriever = None
+        
         # Feedback history to improve responses
         self.feedback_history = []
+    
+    def load_and_index_document(self, file_path: str, doc_type: str) -> Tuple[Any, List]:
+        """Unified method to load, process and index documents for both company profiles and RFPs"""
+        print(f"📄 Loading {doc_type} document: {os.path.basename(file_path)}...")
         
-    def load_company_profile(self, company_profile_path: str) -> bool:
-        """Load and process company profile from a DOCX file"""
-        print("📋 Loading company profile...")
+        # Load document using the helper function
+        documents = load_document(file_path, doc_type)
         
-        # Load document
-        loader = Docx2txtLoader(company_profile_path)
-        documents = loader.load()
+        if not documents:
+            raise ValueError(f"Failed to load {doc_type} document: {file_path}")
         
-        # Split company profile into chunks for better retrieval
-        splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-        # chunks = splitter.split_documents(documents)
-        chunks = splitter.split_text(documents)
+        # Split documents into chunks using semantic chunking
+        print(f"✂️ Splitting {doc_type} into manageable chunks...")
+        chunks = split_documents_semantic(documents)
         
-        # Create vector embeddings using Chroma
-        print("🔍 Creating Chroma vector index for company profile...")
-        self.company_vectorstore = Chroma.from_documents(
+        # Create vector embeddings using Chroma with appropriate directory
+        print(f"🔍 Creating Chroma vector index for {doc_type} content...")
+        
+        # Select the appropriate directory based on document type
+        persist_dir = self.config.COMPANY_VD if doc_type == "company_document" else self.config.RFP_VD
+        
+        vectorstore = Chroma.from_documents(
             documents=chunks, 
             embedding=self.embeddings,
-            persist_directory=self.config.COMPANY_VD
+            persist_directory=persist_dir
         )
         
         # Persist the vector database
-        self.company_vectorstore.persist()
+        vectorstore.persist()
         
-        # Create retriever for company information
-        self.company_retriever = self.company_vectorstore.as_retriever(
+        # Create retriever
+        retriever = vectorstore.as_retriever(
             search_type="similarity",
-            search_kwargs={"k": 3}
+            search_kwargs={"k": 5 if doc_type == "company_document" else 8}
         )
         
-        print("✅ Company profile loaded and indexed successfully")
+        # Store references to retrievers based on document type
+        if doc_type == "company_document":
+            self.company_vectorstore = vectorstore
+            self.company_retriever = retriever
+        else:
+            self.rfp_vectorstore = vectorstore
+            self.rfp_retriever = retriever
+        
+        print(f"✅ {doc_type} loaded and indexed successfully")
+        return retriever, chunks
+    
+    def load_company_profile(self, company_profile_path: str) -> bool:
+        """Load and process company profile using unified loader"""
+        _, _ = self.load_and_index_document(company_profile_path, "company_document")
         return True
     
     def load_rfp(self, rfp_path: str):
-        """Load and process RFP document"""
-        print(f"📄 Loading RFP document: {os.path.basename(rfp_path)}...")
-        
-        # Load document
-        loader = PyMuPDFLoader(rfp_path)
-        pages = loader.load()
-        
-        # Split RFP into chunks
-        print("✂️ Splitting RFP into manageable chunks...")
-        splitter = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=150)
-        chunks = splitter.split_documents(pages)
-        
-        # Create vector embeddings using Chroma
-        print("🔍 Creating Chroma vector index for RFP content...")
-        rfp_vectorstore = Chroma.from_documents(
-            documents=chunks, 
-            embedding=self.embeddings,
-            persist_directory=self.config.RFP_VD
-        )
-        
-        # Persist the vector database
-        rfp_vectorstore.persist()
-        
-        # Create retriever for RFP
-        rfp_retriever = rfp_vectorstore.as_retriever(
-            search_type="similarity",
-            search_kwargs={"k": 8}
-        )
-        
-        return rfp_retriever, chunks
+        """Load and process RFP document using unified loader"""
+        return self.load_and_index_document(rfp_path, "rfp_document")
     
     def get_relevant_company_info(self, rfp_chunks: List) -> str:
         """Extract company information relevant to the RFP requirements"""
@@ -468,7 +467,7 @@ if __name__ == "__main__":
     
     # Analyze eligibility for a specific RFP with ReAct approach (3 iterations)
     result = eligibility_analyzer_agent.analyze_eligibility_react(
-        "./documents/RFPs/ELIGIBLE RFP - 1.pdf", 
+        "documents/RFPs/IN-ELIGIBLE_RFP.pdf", 
         iterations=3
     )
     

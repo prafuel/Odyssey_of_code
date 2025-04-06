@@ -1,15 +1,18 @@
 {
-  "eligible": true,
+  "eligible": false,
   "reasons": [
-    "The company has necessary certifications and licenses to provide Temporary Staffing Services",
-    "The company has experience in providing temporary staffing services, particularly in the mental health and intellectual and developmental disability services",
-    "The company has staffing experience in similar settings, such as community centers, local mental health authorities, or local intellectual and developmental disability authorities"
+    "No Exemption Organization Certification #EX 152433",
+    "Not authorized to do business in the state of New York"
   ],
-  "missing_requirements": [],
+  "missing_requirements": [
+    "Exemption Organization Certification #EX 152433",
+    "Authorized to do business in the state of New York"
+  ],
   "matching_requirements": [
-    "The company has necessary certifications and licenses to provide Temporary Staffing Services",
-    "The company has experience in providing temporary staffing services, particularly in the mental health and intellectual and developmental disability services",
-    "The company has staffing experience in similar settings, such as community centers, local mental health authorities, or local intellectual and developmental disability authorities"
+    "Comprehensive General Liability coverage and Business Automobile Liability coverage"
   ],
-  "recommended_actions": []
+  "recommended_actions": [
+    "Obtain Exemption Organization Certification #EX 152433",
+    "Register to do business in the state of New York"
+  ]
 }

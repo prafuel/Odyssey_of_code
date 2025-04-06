@@ -15,6 +15,8 @@ from typing import List
 from config import config
 from dotenv import load_dotenv
 
+from helper.loading_docs import load_document, split_documents_semantic
+from helper.semantic_chunking import SemanticChunker
 from schema import RiskAnalysisWithReasoning, RiskAnalysisOutput, RiskClause, ReasoningStep
 
 load_dotenv()
@@ -562,5 +564,5 @@ if __name__ == "__main__":
     )
 
     print("\n📊 SAVING FINAL RISK ANALYSIS OUTPUT:")
-    with open("risk_analysis.json", "w") as f:
+    with open("contract_risk_analysis.json", "w") as f:
         json.dump(result.model_dump(), f, indent=2)

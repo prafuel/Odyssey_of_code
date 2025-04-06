@@ -1,0 +1,18 @@
+{
+  "eligible": false,
+  "reasons": [
+    "The company does not provide explicit evidence of Comprehensive General Liability coverage and Business Automobile Liability coverage"
+  ],
+  "missing_requirements": [
+    "Comprehensive General Liability coverage",
+    "Business Automobile Liability coverage"
+  ],
+  "matching_requirements": [
+    "User-friendly, visually appealing, and mobile-responsive website",
+    "Seamless user experience and user-friendly interface",
+    "Tools that enable complete control of content without specialized technical knowledge or assistance"
+  ],
+  "recommended_actions": [
+    "Provide explicit evidence of Comprehensive General Liability coverage and Business Automobile Liability coverage"
+  ]
+}
